@@ -19,10 +19,6 @@
         Backbone.history || (Backbone.history = new Backbone.History);
 
         _delegate_routes(this, args.delegate, args.routes);
-
-        if (!Backbone.history.start({pushState: true})) {
-          window.location.href = "/404.html";
-        }
     }
 
     // Cached regular expressions for matching named param parts and splatted
