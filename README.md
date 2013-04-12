@@ -5,6 +5,23 @@ Router with ability to specify a delegate object
 
 Forked from a gist here: [stephenhandley](https://gist.github.com/stephenhandley/2251058)
 
+```coffeescript
+class Client
+  constructor:()->
+    @router = new DelegateRouter(
+      delegate: this
+      routes: 
+        "barf/:something": "barf"
+        "barfed/:one/:two": "barfed"
+        "": "index"
+        ":all": "all"
+    )
+  
+  barf: (something)->
+  barfed: (one, two)->
+  index: ()->
+```
+
 ```javascript
 function Delegate(routes) {
   this.router = new DelegatingRouter({
